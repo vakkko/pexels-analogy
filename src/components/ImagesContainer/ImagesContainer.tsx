@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { DataType } from "../../App.modal";
 import { ImageContainerProps } from "../../App.modal";
-
+import { Main } from "./imageContainer.styled";
 export default function ImagesContainer({ searchQuery }: ImageContainerProps) {
   const [data, setData] = useState<DataType[]>([]);
 
@@ -29,13 +29,13 @@ export default function ImagesContainer({ searchQuery }: ImageContainerProps) {
     };
 
     fetchData();
-  }, [searchQuery]);
+  }, [searchQuery, address]);
 
   return (
-    <div>
+    <Main>
       {data.map((photo, i) => {
         return <img key={i} src={photo.src.medium} alt={photo.alt} />;
       })}
-    </div>
+    </Main>
   );
 }
