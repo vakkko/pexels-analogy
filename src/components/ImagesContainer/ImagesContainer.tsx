@@ -1,41 +1,73 @@
 import { useEffect, useState } from "react";
-import { DataType } from "../../App.modal";
+import { DataTypes } from "../../App.modal";
 import { ImageContainerProps } from "../../App.modal";
 import { Main } from "./imageContainer.styled";
-export default function ImagesContainer({ searchQuery }: ImageContainerProps) {
-  const [data, setData] = useState<DataType[]>([]);
 
-  const address = ` https://api.pexels.com/v1/search?query=${searchQuery}`;
+export default function ImagesContainer({ searchQuery }: ImageContainerProps) {
+  const [data, setData] = useState<DataTypes[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+
+  const address = `https://api.pexels.com/v1/search?query=${
+    searchQuery ? searchQuery : "curated"
+  }`;
+
+  const fetchData = async () => {
+    if (loading) return;
+    setLoading(true);
+
+    try {
+      const response = await fetch(`${address}&page=${page}`, {
+        headers: {
+          Authorization:
+            "400yEYHKzmiZhG5uqOXzARnaAHdBMx8kL7luupG6F3rZpRtmmZjgqHQP",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const result = await response.json();
+      setData((prevData) => [...prevData, ...result.photos]);
+    } catch (err) {
+      console.error("Error fetching data:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(address, {
-          headers: {
-            Authorization:
-              "400yEYHKzmiZhG5uqOXzARnaAHdBMx8kL7luupG6F3rZpRtmmZjgqHQP",
-          },
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        setData(result.photos || []);
-      } catch (err) {
-        console.error("Error fetching data:", err);
-      }
-    };
-
+    setData([]);
+    setPage(1);
     fetchData();
-  }, [searchQuery, address]);
+  }, [searchQuery]);
+
+  useEffect(() => {
+    fetchData();
+  }, [page]);
+
+  const handleScroll = () => {
+    if (
+      document.documentElement.scrollTop + window.innerHeight >=
+        document.documentElement.offsetHeight - 50 &&
+      !loading
+    ) {
+      setPage((prevPage) => prevPage + 1);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [loading]);
 
   return (
     <Main>
-      {data.map((photo, i) => {
-        return <img key={i} src={photo.src.medium} alt={photo.alt} />;
-      })}
+      {data.map((photo, i) => (
+        <img key={i} src={photo.src.medium} alt={photo.alt} />
+      ))}
+      {loading && <h1>Loading...</h1>}
     </Main>
   );
 }

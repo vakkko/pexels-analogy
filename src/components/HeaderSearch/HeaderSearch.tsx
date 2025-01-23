@@ -13,14 +13,23 @@ export default function HeaderSearch({
   onSearch,
 }: HeaderSearchProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setText(event.target.value);
+    const value = event.target.value;
+    const isValid = /^[a-zA-Z\s]*$/.test(value);
+
+    if (isValid) {
+      setText(event.target.value);
+      if (value.length === 3) {
+        const formEvent = new Event("submit", { bubbles: true });
+        event.target.form?.dispatchEvent(formEvent);
+      }
+    }
   };
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-
     const formData = new FormData(e.currentTarget);
     const formJson = Object.fromEntries(formData.entries());
+
     if (typeof formJson.search === "string") {
       onSearch(formJson.search);
     } else {

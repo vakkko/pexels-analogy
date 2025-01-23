@@ -3,7 +3,7 @@ import HeaderSearch from "./components/HeaderSearch/HeaderSearch";
 import ImagesContainer from "./components/ImagesContainer/ImagesContainer";
 function App() {
   const [text, setText] = useState<string>("");
-  const [searchQuery, setSearchQuery] = useState("trending");
+  const [searchQuery, setSearchQuery] = useState("curated");
 
   const handleSearch = (query: string) => {
     setSearchQuery(query);

@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type DataType = {
+export type DataTypes = {
   alt: string;
   avg_color: string;
   height: number;
@@ -19,6 +19,14 @@ export type DataType = {
   url: string;
   width: number;
 };
+
+// export type DataTypes = {
+//   total_results: number;
+//   page: number;
+//   per_page: number;
+//   photos: [PhotoTypes];
+//   next_page: string;
+// };
 
 export interface HeaderSearchProps {
   text: string;
