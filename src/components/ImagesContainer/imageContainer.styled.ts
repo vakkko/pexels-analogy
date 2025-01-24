@@ -12,4 +12,8 @@ export const Main = styled.main`
     border-radius: 10px;
     width: 30%;
   }
+
+  h1 {
+    align-self: center;
+  }
 `;

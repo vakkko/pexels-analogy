@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import { DataTypes } from "../../App.modal";
 import { ImageContainerProps } from "../../App.modal";
 import { Main } from "./imageContainer.styled";
+import { API_URL, API_AUTH_KEY } from "../../constants/apiConstants";
 
 export default function ImagesContainer({ searchQuery }: ImageContainerProps) {
   const [data, setData] = useState<DataTypes[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
 
-  const address = `https://api.pexels.com/v1/search?query=${
-    searchQuery ? searchQuery : "curated"
-  }`;
+  const address = `${API_URL}${searchQuery ? searchQuery : "curated"}`;
 
   const fetchData = async () => {
     if (loading) return;
@@ -19,8 +18,7 @@ export default function ImagesContainer({ searchQuery }: ImageContainerProps) {
     try {
       const response = await fetch(`${address}&page=${page}`, {
         headers: {
-          Authorization:
-            "400yEYHKzmiZhG5uqOXzARnaAHdBMx8kL7luupG6F3rZpRtmmZjgqHQP",
+          Authorization: API_AUTH_KEY,
         },
       });
 

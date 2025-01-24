@@ -28,10 +28,10 @@ export const SearchInput = styled.input`
 `;
 
 export const Button = styled.button`
-  border: none;
-  background-color: #658d9e;
+  border: 1px solid white;
+  background-color: #5d3b63;
   border-radius: 15px;
-  padding: 1.2rem;
+  padding: 1.2rem 1.5rem;
   margin-left: 1rem;
   color: white;
   cursor: pointer;

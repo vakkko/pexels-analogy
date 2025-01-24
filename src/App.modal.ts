@@ -20,14 +20,6 @@ export type DataTypes = {
   width: number;
 };
 
-// export type DataTypes = {
-//   total_results: number;
-//   page: number;
-//   per_page: number;
-//   photos: [PhotoTypes];
-//   next_page: string;
-// };
-
 export interface HeaderSearchProps {
   text: string;
   setText: Dispatch<SetStateAction<string>>;
