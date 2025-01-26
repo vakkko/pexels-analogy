@@ -1,9 +1,4 @@
-import {
-  HeaderSection,
-  Logo,
-  SearchInput,
-  Button,
-} from "./headerSearch.styled";
+import { HeaderSection, Logo, SearchInput } from "./headerSearch.styled";
 import { HeaderSearchProps } from "../../App.modal";
 import React from "react";
 
@@ -44,11 +39,10 @@ export default function HeaderSearch({
         <SearchInput
           name="search"
           type="text"
-          placeholder="Search for photos"
+          placeholder="SEARCH"
           value={text}
           onChange={handleChange}
         ></SearchInput>
-        <Button type="submit">Search</Button>
       </form>
     </HeaderSection>
   );
