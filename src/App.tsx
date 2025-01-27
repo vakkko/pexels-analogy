@@ -20,6 +20,10 @@ function App() {
           href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap"
+          rel="stylesheet"
+        />
       </Helmet>
       <HeaderSearch text={text} setText={setText} onSearch={handleSearch} />
       <ImagesContainer searchQuery={searchQuery} />

@@ -8,7 +8,6 @@ export default function ImagesContainer({ searchQuery }: ImageContainerProps) {
   const [data, setData] = useState<DataTypes[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [page, setPage] = useState<number>(1);
-
   const address = `${API_URL}${searchQuery ? searchQuery : "curated"}`;
 
   const fetchData = async () => {

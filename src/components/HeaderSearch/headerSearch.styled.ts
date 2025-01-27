@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 export const HeaderSection = styled.header`
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15rem;
   background-color: rgba(0, 0, 0, 0.4);
   background-image: url("/images/pexels-background.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 35rem;
+  padding-bottom: 10rem;
   padding-top: 9rem;
   background-position: 20%;
   background-blend-mode: overlay;
@@ -23,7 +24,7 @@ export const Logo = styled.span`
 export const SearchInput = styled.input`
   padding: 1.2rem 7.5rem 1.2rem 4rem;
   width: 100%;
-  font-size: 14px;
+  font-size: 1.4rem;
   line-height: 18px;
   color: #575756;
   background-color: transparent;
@@ -62,4 +63,19 @@ export const Button = styled.button`
   margin-left: 1rem;
   color: white;
   cursor: pointer;
+`;
+
+export const Section = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+`;
+
+export const Paragraph = styled.p`
+  font-family: "Lato", serif;
+  color: white;
+  font-size: 2.5rem;
+  width: 64%;
+  min-height: 9rem;
+  align-self: center;
 `;

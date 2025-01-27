@@ -1,6 +1,13 @@
-import { HeaderSection, Logo, SearchInput } from "./headerSearch.styled";
+import {
+  HeaderSection,
+  Logo,
+  SearchInput,
+  Section,
+  Paragraph,
+} from "./headerSearch.styled";
 import { HeaderSearchProps } from "../../App.modal";
 import React from "react";
+import useTypeWriter from "../../hooks/useTypeWriter";
 
 export default function HeaderSearch({
   text,
@@ -32,18 +39,25 @@ export default function HeaderSearch({
     }
   }
 
+  const displayText = useTypeWriter(
+    `Pexels provides high quality and completely free stock photos licensed under the Pexels license. All photos are nicely tagged, searchable and also easy to discover through our discover pages.`
+  );
+
   return (
     <HeaderSection>
-      <Logo>pexels</Logo>
-      <form onSubmit={handleSubmit}>
-        <SearchInput
-          name="search"
-          type="text"
-          placeholder="SEARCH"
-          value={text}
-          onChange={handleChange}
-        ></SearchInput>
-      </form>
+      <Section>
+        <Logo>pexels</Logo>
+        <form onSubmit={handleSubmit}>
+          <SearchInput
+            name="search"
+            type="text"
+            placeholder="SEARCH"
+            value={text}
+            onChange={handleChange}
+          ></SearchInput>
+        </form>
+      </Section>
+      <Paragraph>{displayText}</Paragraph>
     </HeaderSection>
   );
 }
