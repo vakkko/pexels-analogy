@@ -7,7 +7,7 @@ const useTypeWriter = (text: string, speed: number = 30) => {
     let i: number = 0;
     const typingInterval = setInterval(() => {
       if (i < text.length) {
-        setDisplayText((prevText) => prevText + text.charAt(i));
+        setDisplayText(text.substring(0, i + 1));
         i++;
       } else {
         clearInterval(typingInterval);

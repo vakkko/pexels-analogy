@@ -4,6 +4,8 @@ import {
   SearchInput,
   Section,
   Paragraph,
+  SearchButton,
+  GalleryIcon,
 } from "./headerSearch.styled";
 import { HeaderSearchProps } from "../../App.modal";
 import React from "react";
@@ -40,24 +42,28 @@ export default function HeaderSearch({
   }
 
   const displayText = useTypeWriter(
-    `Pexels provides high quality and completely free stock photos licensed under the Pexels license. All photos are nicely tagged, searchable and also easy to discover through our discover pages.`
+    `The best free stock photos, royalty free images & videos shared by creators`
   );
 
   return (
     <HeaderSection>
+      <Logo>pexels</Logo>
       <Section>
-        <Logo>pexels</Logo>
+        <Paragraph>{displayText}</Paragraph>
         <form onSubmit={handleSubmit}>
+          <GalleryIcon src="/images/icon-gallery.svg" alt="gallery-icon" />
           <SearchInput
             name="search"
             type="text"
-            placeholder="SEARCH"
+            placeholder="Search for free photos"
             value={text}
             onChange={handleChange}
-          ></SearchInput>
+          />
+          <SearchButton type="submit">
+            <img src="/images/search-loop.svg" alt="search-icon" />
+          </SearchButton>
         </form>
       </Section>
-      <Paragraph>{displayText}</Paragraph>
     </HeaderSection>
   );
 }

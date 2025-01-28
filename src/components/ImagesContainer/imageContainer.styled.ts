@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.main`
   display: flex;
-  gap: 3rem;
+  gap: 1.5rem;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
