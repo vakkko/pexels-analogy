@@ -16,6 +16,7 @@ export const HeaderSection = styled.header`
 `;
 
 export const Logo = styled.span`
+  font-family: "Dancing Script", serif;
   font-size: 4rem;
   color: white;
   font-weight: 700;
