@@ -1,50 +1,49 @@
-# React + TypeScript + Vite
+# 🌍 Rest Countries Analogy Image App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a frontend application inspired by [Pexels](https://www.pexels.com/), built to showcase countries with beautiful, dynamically fetched images.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🌎 **Dynamic Image Display** – Images are fetched and displayed based on countries.
+- 🔍 **Search Functionality** – Easily search for images by keyword.
+- 📜 **Infinite Scrolling** – Seamlessly load more images as you scroll.
+- 🔃 **Loading Animations** – Friendly feedback while content is being fetched.
+- 🎹 **Typing Animation** – Engaging text animation using a custom `useTypeWriter` hook.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🛠️ Tech Stack
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- ⚛️ **React** – Building interactive UI components.
+- 🟦 **TypeScript** – Ensuring type safety across the project.
+- 💅 **Styled Components** – Writing scoped and dynamic styles.
+- 🧲 **Custom Hook** – Implemented `useTypeWriter` for text animation.
+- 🌐 **REST API** – Fetching data from image services (e.g., Unsplash or Pexels API).
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## 🧠 What I Learned
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Through building this project, I enhanced my understanding of:
+
+- ✅ Creating and using custom React hooks
+- ✅ Managing infinite scroll with performance in mind
+- ✅ Integrating third-party APIs and handling async requests
+- ✅ Styling components using Styled Components
+- ✅ Structuring and maintaining a real-world TypeScript React application
+
+---
+
+## 👤 Author
+
+**Vladimer Gabisonia**
+GitHub: [@vakkko](https://github.com/vakkko)
+
+---
+
+## 🙌 Acknowledgments
+
+- Inspired by the design and functionality of [Pexels](https://www.pexels.com/)
+- Images are fetched using [Unsplash API](https://unsplash.com/developers) or other open image APIs
