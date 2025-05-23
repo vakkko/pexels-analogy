@@ -75,7 +75,10 @@ export default function ImagesContainer({ searchQuery }: ImageContainerProps) {
             <Container key={i}>
               <Pic src={photo.src.medium} alt={photo.alt} />
               <IconWrapper>
-                <img src="/images/icon-heart.svg" alt="heart-icon" />
+                <img
+                  src={`${import.meta.env.BASE_URL}images/icon-heart.svg`}
+                  alt="heart-icon"
+                />
               </IconWrapper>
             </Container>
           ))}

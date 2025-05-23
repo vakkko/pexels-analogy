@@ -6,7 +6,7 @@ export const HeaderSection = styled.header`
   justify-content: center;
   gap: 10rem;
   background-color: rgba(0, 0, 0, 0.4);
-  background-image: url("/images/pexels-background.webp");
+   background-image: url("${import.meta.env.BASE_URL}images/pexels-background.webp");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 2rem;

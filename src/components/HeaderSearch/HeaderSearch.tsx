@@ -47,7 +47,10 @@ export default function HeaderSearch({
       <Section>
         <Paragraph>{displayText}</Paragraph>
         <form onSubmit={handleSubmit}>
-          <GalleryIcon src="/images/icon-gallery.svg" alt="gallery-icon" />
+          <GalleryIcon
+            src={`${import.meta.env.BASE_URL}images/icon-gallery.svg`}
+            alt="gallery-icon"
+          />
           <SearchInput
             name="search"
             type="text"
@@ -56,7 +59,10 @@ export default function HeaderSearch({
             onChange={handleChange}
           />
           <SearchButton type="submit">
-            <img src="/images/search-loop.svg" alt="search-icon" />
+            <img
+              src={`${import.meta.env.BASE_URL}images/search-loop.svg`}
+              alt="search-icon"
+            />
           </SearchButton>
         </form>
       </Section>
