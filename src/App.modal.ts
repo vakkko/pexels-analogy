@@ -23,7 +23,7 @@ export type DataTypes = {
 export interface HeaderSearchProps {
   text: string;
   setText: Dispatch<SetStateAction<string>>;
-  onSearch: (query: string) => void;
+  handleSearch: (query: string) => void;
 }
 
 export interface ImageContainerProps {

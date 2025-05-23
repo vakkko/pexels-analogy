@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <HeaderSearch text={text} setText={setText} onSearch={handleSearch} />
+      <HeaderSearch text={text} setText={setText} handleSearch={handleSearch} />
       <ImagesContainer searchQuery={searchQuery} />
     </>
   );

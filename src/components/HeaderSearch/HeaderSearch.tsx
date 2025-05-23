@@ -14,7 +14,7 @@ import useTypeWriter from "../../hooks/useTypeWriter";
 export default function HeaderSearch({
   text,
   setText,
-  onSearch,
+  handleSearch,
 }: HeaderSearchProps) {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -22,10 +22,6 @@ export default function HeaderSearch({
 
     if (isValid) {
       setText(event.target.value);
-      if (value.length === 3) {
-        const formEvent = new Event("submit", { bubbles: true });
-        event.target.form?.dispatchEvent(formEvent);
-      }
     }
   };
 
@@ -35,7 +31,7 @@ export default function HeaderSearch({
     const formJson = Object.fromEntries(formData.entries());
 
     if (typeof formJson.search === "string") {
-      onSearch(formJson.search);
+      handleSearch(formJson.search);
     } else {
       console.error("Search value is not a string");
     }
