@@ -44,7 +44,7 @@ Error generating stack: `+u.message+`
   justify-content: center;
   gap: 10rem;
   background-color: rgba(0, 0, 0, 0.4);
-  background-image: url("/images/pexels-background.webp");
+   background-image: url("${"/pexels-analogy/"}images/pexels-background.webp");
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 2rem;
@@ -103,7 +103,7 @@ Error generating stack: `+u.message+`
   position: absolute;
   left: 1rem;
   top: 1rem;
-`,Gh=(i,a=30)=>{const[s,d]=Ge.useState("");return Ge.useEffect(()=>{let m=0;const w=setInterval(()=>{m<i.length?(d(i.substring(0,m+1)),m++):clearInterval(w)},a);return()=>{clearInterval(w)}},[i,a]),s};function Yh({text:i,setText:a,handleSearch:s}){const d=x=>{const z=x.target.value;/^[a-zA-Z\s]*$/.test(z)&&a(x.target.value)};function m(x){x.preventDefault();const z=new FormData(x.currentTarget),P=Object.fromEntries(z.entries());typeof P.search=="string"?s(P.search):console.error("Search value is not a string")}const w=Gh("The best free stock photos, royalty free images & videos shared by creators");return de.jsxs(Uh,{children:[de.jsx(Bh,{children:"pexels"}),de.jsxs(Vh,{children:[de.jsx(Wh,{children:w}),de.jsxs("form",{onSubmit:m,children:[de.jsx(Kh,{src:"/images/icon-gallery.svg",alt:"gallery-icon"}),de.jsx(Hh,{name:"search",type:"text",placeholder:"Search for free photos",value:i,onChange:d}),de.jsx(Qh,{type:"submit",children:de.jsx("img",{src:"/images/search-loop.svg",alt:"search-icon"})})]})]})]})}const Xh=De.main`
+`,Gh=(i,a=30)=>{const[s,d]=Ge.useState("");return Ge.useEffect(()=>{let m=0;const w=setInterval(()=>{m<i.length?(d(i.substring(0,m+1)),m++):clearInterval(w)},a);return()=>{clearInterval(w)}},[i,a]),s};function Yh({text:i,setText:a,handleSearch:s}){const d=x=>{const z=x.target.value;/^[a-zA-Z\s]*$/.test(z)&&a(x.target.value)};function m(x){x.preventDefault();const z=new FormData(x.currentTarget),P=Object.fromEntries(z.entries());typeof P.search=="string"?s(P.search):console.error("Search value is not a string")}const w=Gh("The best free stock photos, royalty free images & videos shared by creators");return de.jsxs(Uh,{children:[de.jsx(Bh,{children:"pexels"}),de.jsxs(Vh,{children:[de.jsx(Wh,{children:w}),de.jsxs("form",{onSubmit:m,children:[de.jsx(Kh,{src:"/pexels-analogy/images/icon-gallery.svg",alt:"gallery-icon"}),de.jsx(Hh,{name:"search",type:"text",placeholder:"Search for free photos",value:i,onChange:d}),de.jsx(Qh,{type:"submit",children:de.jsx("img",{src:"/pexels-analogy/images/search-loop.svg",alt:"search-icon"})})]})]})]})}const Xh=De.main`
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -201,7 +201,7 @@ Error generating stack: `+u.message+`
     border-radius: 50%;
     background-color: gray;
   }
-`,rm="https://api.pexels.com/v1/search?query=",lm="400yEYHKzmiZhG5uqOXzARnaAHdBMx8kL7luupG6F3rZpRtmmZjgqHQP";function um({searchQuery:i}){const[a,s]=Ge.useState([]),[d,m]=Ge.useState(!1),[w,x]=Ge.useState(1);Ge.useEffect(()=>{s([]),x(1)},[i]),Ge.useEffect(()=>{(async()=>{m(!0);const O=`${rm}${i||"curated"}&page=${w}`;try{const F=await fetch(O,{headers:{Authorization:lm}});if(!F.ok)throw new Error(`Status: ${F.status}`);const D=await F.json();s($=>w===1?D.photos:[...$,...D.photos])}catch(F){console.error("Error fetching data:",F)}finally{m(!1)}})()},[w,i]);const z=Ge.useCallback(()=>{document.documentElement.scrollTop+window.innerHeight>=document.documentElement.offsetHeight-50&&!d&&x(P=>P+1)},[d]);return Ge.useEffect(()=>(window.addEventListener("scroll",z),()=>window.removeEventListener("scroll",z)),[d,z]),de.jsxs(de.Fragment,{children:[de.jsxs(Xh,{children:[de.jsx("span",{children:"Free Stock Photos"}),de.jsx("div",{children:a.map((P,O)=>de.jsxs(Of,{children:[de.jsx(Zh,{src:P.src.medium,alt:P.alt}),de.jsx(Jh,{children:de.jsx("img",{src:"/images/icon-heart.svg",alt:"heart-icon"})})]},O))})]}),d&&de.jsxs(nm,{children:[de.jsx(qh,{}),de.jsx(bh,{}),de.jsx(em,{}),de.jsx(tm,{})]},Date.now())]})}const im=Ah`
+`,rm="https://api.pexels.com/v1/search?query=",lm="400yEYHKzmiZhG5uqOXzARnaAHdBMx8kL7luupG6F3rZpRtmmZjgqHQP";function um({searchQuery:i}){const[a,s]=Ge.useState([]),[d,m]=Ge.useState(!1),[w,x]=Ge.useState(1);Ge.useEffect(()=>{s([]),x(1)},[i]),Ge.useEffect(()=>{(async()=>{m(!0);const O=`${rm}${i||"curated"}&page=${w}`;try{const F=await fetch(O,{headers:{Authorization:lm}});if(!F.ok)throw new Error(`Status: ${F.status}`);const D=await F.json();s($=>w===1?D.photos:[...$,...D.photos])}catch(F){console.error("Error fetching data:",F)}finally{m(!1)}})()},[w,i]);const z=Ge.useCallback(()=>{document.documentElement.scrollTop+window.innerHeight>=document.documentElement.offsetHeight-50&&!d&&x(P=>P+1)},[d]);return Ge.useEffect(()=>(window.addEventListener("scroll",z),()=>window.removeEventListener("scroll",z)),[d,z]),de.jsxs(de.Fragment,{children:[de.jsxs(Xh,{children:[de.jsx("span",{children:"Free Stock Photos"}),de.jsx("div",{children:a.map((P,O)=>de.jsxs(Of,{children:[de.jsx(Zh,{src:P.src.medium,alt:P.alt}),de.jsx(Jh,{children:de.jsx("img",{src:"/pexels-analogy/images/icon-heart.svg",alt:"heart-icon"})})]},O))})]}),d&&de.jsxs(nm,{children:[de.jsx(qh,{}),de.jsx(bh,{}),de.jsx(em,{}),de.jsx(tm,{})]},Date.now())]})}const im=Ah`
 
 * {
   margin: 0;
